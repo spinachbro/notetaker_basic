@@ -5,7 +5,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/app2/static')
+app.config['APPLICATION_ROOT'] = '/app2'
 app.config['SECRET_KEY'] = 'your-secret-key-here'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///notetaker.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
